@@ -1,0 +1,211 @@
+inputs array
+
+answer array a to z OR inputs[0] (to start withshorter answer list)
+
+go through inputs
+  split each letter into new array to check
+    go through each of the new array
+      if letter match move into array answer2
+    answer now = answer2 array
+
+answer array length = solution!
+
+N = ["abcdde", "baccd", "eeabg"]
+answer = N[0]
+answer2 = []
+
+N.each { |x| 
+  temp = x.split(//)
+  temp.each { |y|
+    if answer.include? y
+      answer2.push(y)
+      puts answer2
+    end
+  } 
+  answer = answer2
+}
+
+puts answer.length
+
+# WORKING BELOW!
+N = [
+"afdzhaadfg",
+"adzhgiazklmo",
+"dhizkl",
+"aacdefgihkoa",
+"yiazkfgh"
+]
+
+# N = ["abcdde", "baccd", "eeabg"]
+answer = N[0].split(//)
+answer2 = []
+
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    if x.include? answer[-1]
+      answer2.push(answer[-1])
+    else
+      answer.pop
+    end
+  }
+}
+puts answer.length
+
+N =["abcdde", "baccd", "eeabg"]
+answer = N[0].split(//)
+answer2 = []
+
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    if answer.include? y
+      answer2.push(y)
+    else
+      answer.pop
+    end
+  }
+}
+
+
+N =["abcdde", "baccd", "eeabg"]
+answer = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    answer -= y
+  }
+}
+puts (26-answer.length)
+
+
+N =["abcdde", "baccd", "eeabg"]
+answer = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+answer2 = []
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    answer.each { |letter|
+      if y = letter
+        answer.pop
+      end
+    }
+  }
+}
+
+
+
+
+
+N =["abcdde", "baccd", "eeabg"]
+start = N[0].split(//)
+answer = []
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    count = 0
+    start.each {|letter|
+      if letter != y
+        count +1
+      end
+    }
+    if count < start.length
+      answer.push(y)
+    end
+  }
+}
+
+
+N =["abcdde", "baccd", "eeabg"]
+answer = N[0].split(//)
+N.each { |x|
+  temp = x.split(//)
+  answer.keep_if { |y|
+    print temp
+    print y
+    print answer
+    y =~ /temp/
+  }
+}
+
+
+N =["abcdde", "baccd", "eeabg"]
+answer = N[0].split(//)
+answer2 = []
+N.each { |x|
+  temp = x.split(//)
+  temp.each { |y|
+    if answer.include?(y) && temp.include?(y)    
+      answer2.push(y)
+    end
+  }
+  answer = answer2
+} 
+answer.length
+
+
+
+$i = 0
+N =["abcdde", "baccd", "eeabg"]
+list = {}
+answer = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+while $i < N.length
+  N.each { |x|
+    temp = x.split(//)
+  }
+  list.push({$i: temp})
+end
+
+puts list
+
+
+
+
+
+
+
+
+
+N =["abcdde", "baccd", "eeabg"]
+newN = []
+N.each { |word|
+  newN.push(word.split(//).sort.uniq)
+}
+$i = 0
+answer = []
+while $i < newN.length
+  print newN[$i] & newN[$i-1]
+  puts $i
+  $i += 1
+end
+
+
+
+x = [100, 8.97, 14.12, 7.49, 8.12, 12.10]
+y = 0.0
+x.each { |value| y += value}
+
+
+
+#FINALLY A WORKING MODEL!!!
+
+stones =["abcdde", "baccd", "eeabg"]
+answer = stones[0].split("")
+i = 1
+while i < stones.length
+  answer &= stones[i].split("")
+  i += 1
+end
+print answer.length
+
+# FOR HACKER RANK
+
+N =[3, "abcdde", "baccd", "eeabg"]
+answer = N[1].split("")
+i = 2
+while i < N[0]+1
+  answer &= N[i].split("")
+  i += 1
+end
+print answer.length
+
